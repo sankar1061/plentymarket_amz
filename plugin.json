@@ -1,0 +1,68 @@
+{
+  "name": "AmazonLoginAndPay",
+  "namespace": "AmazonLoginAndPay",
+  "marketplaceName": {
+    "de": "Amazon Pay",
+    "en": "Amazon Pay"
+  },
+  "description": "The official Amazon Pay plugin for plentymarkets",
+  "shortDescription": {
+    "de": "Das offizielle, von alkim media (Certified Developer Amazon Pay) entwickelte Amazon Pay Plugin.",
+    "en": "The official Amazon Pay plugin developed by alkim media (Certified Developer Amazon Pay)."
+  },
+  "type": "payment",
+  "categories":["3519"],
+  "version": "1.0.0",
+  "license": "AGPL-3.0",
+  "pluginIcon": "icon_plugin_xs.png",
+  "price": 0.0,
+  "keywords": [
+    "amazon",
+    "official",
+    "plentymarkets",
+    "payment"
+  ],
+  "author": "alkim media",
+  "authorIcon": "icon_author_xs.png",
+  "email": "plentymarkets@alkim.de",
+  "phone": "+49 33971 604480",
+  "serviceProvider": "AmazonLoginAndPay\\Providers\\AmzServiceProvider",
+  "containers": [],
+  "dataProviders": [
+    {
+      "key": "AmazonLoginAndPay\\Providers\\AmzDataProviderCartButton",
+      "name": "Amazon Login & Pay - Checkout-Button",
+      "description": "Amazon Login & Pay - Checkout-Button"
+    },
+    {
+      "key": "AmazonLoginAndPay\\Providers\\AmzDataProviderLoginButton",
+      "name": "Amazon Login & Pay - Login-Button",
+      "description": "Amazon Login & Pay - Login-Button"
+    },
+    {
+      "key": "AmazonLoginAndPay\\Providers\\AmzDataProviderOrderConfirmation",
+      "name": "Amazon Login & Pay - Zahlungshinweis auf Bestätigungsseite",
+      "description": "Amazon Login & Pay - Zahlungshinweis auf Bestätigungsseite"
+    },
+    {
+      "key": "AmazonLoginAndPay\\Providers\\AmzDataProviderJavascript",
+      "name": "Amazon Login & Pay - JavaScript",
+      "description": "Amazon Login & Pay - JavaScript"
+    },
+    {
+      "key": "AmazonLoginAndPay\\Providers\\AmzDataProviderPaymentLogo",
+      "name": "Amazon Login & Pay - Logo",
+      "description": "Amazon Login & Pay - Logo"
+    }
+  ],
+  "javaScriptFiles": [
+    "main.js"
+  ],
+  "require": [],
+  "dependencies": {
+    "amzn/amazon-pay-sdk-php": "3.1.0"
+  },
+  "runOnBuild": [
+    "AmazonLoginAndPay\\Migrations\\CreateAmzTransactionTable"
+  ]
+}
